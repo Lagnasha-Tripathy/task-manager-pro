@@ -5,14 +5,18 @@ function App() {
   const [taskInput, setTaskInput] = useState("");
 
   const addTask = () => {
-    if (taskInput.trim() === "") return;
+    if (!taskInput.trim()) return;
 
     setTasks([...tasks, taskInput]);
     setTaskInput("");
   };
 
+  const deleteTask = (index) => {
+    setTasks(tasks.filter((_, i) => i !== index));
+  };
+
   return (
-    <div style={{ padding: "30px" }}>
+    <div style={{ padding: "30px", maxWidth: "600px", margin: "auto" }}>
       <h1>🚀 Task Manager Pro</h1>
 
       <input
@@ -20,13 +24,24 @@ function App() {
         placeholder="Enter a task"
         value={taskInput}
         onChange={(e) => setTaskInput(e.target.value)}
+        style={{ padding: "10px", width: "70%" }}
       />
 
-      <button onClick={addTask}>Add Task</button>
+      <button onClick={addTask} style={{ marginLeft: "10px" }}>
+        Add Task
+      </button>
 
       <ul>
         {tasks.map((task, index) => (
-          <li key={index}>{task}</li>
+          <li key={index}>
+            {task}
+            <button
+              onClick={() => deleteTask(index)}
+              style={{ marginLeft: "10px" }}
+            >
+              Delete
+            </button>
+          </li>
         ))}
       </ul>
     </div>
