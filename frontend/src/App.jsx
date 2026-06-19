@@ -1,3 +1,4 @@
+import { FaTrash } from "react-icons/fa";
 import { useState } from "react";
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
               onClick={() => deleteTask(index)}
               style={{ marginLeft: "10px" }}
             >
-              Delete
+              <FaTrash /> Delete
             </button>
           </li>
         ))}
