@@ -106,12 +106,5 @@ Add your Vercel deployment URL here.
 ## Author
 
 **Lagnasha Tripathy**
-
-GitHub: https://github.com/Lagnasha-Tripathy
-
-LinkedIn: Add your LinkedIn profile URL here
-
-## License
-
-This project is licensed under the MIT License.
+CSE student , ITER 
 
