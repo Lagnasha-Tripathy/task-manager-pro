@@ -43,7 +43,7 @@ function App() {
   };
 
   const completedTasks = tasks.filter((task) => task.completed).length;
-  const completionPercentage = tasks.length > 0 ? Math.round((completedTasks / tasks.length) * 100) : 0;
+  const pendingTasks = tasks.filter((task) => !task.completed).length;
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
@@ -87,19 +87,14 @@ function App() {
             <div className="stat-label">Completed</div>
           </div>
           <div className="stat-card">
-            <div className="stat-value">{completionPercentage}%</div>
-            <div className="stat-label">Progress</div>
+            <div className="stat-value">{pendingTasks}</div>
+            <div className="stat-label">Pending</div>
           </div>
-        </div>
-
-        <div className="progress-bar">
-          <div className="progress-fill" style={{ width: `${completionPercentage}%` }}></div>
         </div>
 
         <div className="tasks-section">
           {tasks.length === 0 ? (
             <div className="empty-state">
-              <div className="empty-icon">📝</div>
               <h3>No tasks yet</h3>
               <p>Add a task above to get started!</p>
             </div>
