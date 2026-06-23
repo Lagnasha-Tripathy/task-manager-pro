@@ -105,6 +105,6 @@ Add your Vercel deployment URL here.
 
 ## Author
 
-**Lagnasha Tripathy , **
-CSE student , ITER 
+**Lagnasha Tripathy**
+ , CSE student , ITER 
 
